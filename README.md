@@ -39,7 +39,7 @@ Las tareas se clasifican por prioridad con etiquetas en Trello:
 
 Alta: Tareas críticas que requieren atención inmediata.
 Media: Funcionalidades importantes pero no urgentes.
-Baja: Mejoras menores o ajustes.
+Baja: Tareas menores o ajustes.
 
 Control de Versiones
 
