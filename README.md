@@ -1,81 +1,93 @@
-Proyecto de Gestión de Expedientes Clínicos - Cirupied
+# CirupieD - Gestión de Expedientes Clínicos PWA
 
-Descripción del Proyecto
+## Descripción del Proyecto
 
-Cirupied es una Aplicación Web Progresiva (PWA) orientada a la gestión eficiente de expedientes clínicos. La aplicación está diseñada para facilitar el acceso y la manipulación de datos clínicos desde dispositivos móviles y de escritorio, permitiendo la interacción con la plataforma tanto en línea como fuera de línea. La aplicación está desarrollada con tecnologías modernas, utilizando React + Vite junto con Service Workers, con el objetivo de ofrecer una experiencia rápida, accesible y confiable para los profesionales del sector salud.
+**CirupieD** es una Aplicación Web Progresiva (PWA) diseñada para la gestión eficiente de expedientes clínicos. Su objetivo es facilitar el acceso y la manipulación de datos clínicos desde cualquier dispositivo, tanto en línea como fuera de línea. La aplicación está desarrollada utilizando **React + Vite** y **Service Workers** para ofrecer una experiencia rápida, accesible y confiable a los profesionales de la salud.
 
-El enfoque principal es mejorar la accesibilidad a los expedientes clínicos, permitiendo su consulta y actualización en cualquier momento, garantizando además la seguridad de los datos y cumpliendo con las normativas de protección de información clínica.
+### Objetivos del Proyecto
 
-Metodología de Desarrollo
+- Mejorar la accesibilidad a los expedientes clínicos.
+- Facilitar la consulta y actualización de datos clínicos en cualquier momento.
+- Garantizar la seguridad de la información y cumplir con las normativas de protección de datos clínicos.
 
-° Metodología Utilizada
+## Metodología de Trabajo
 
-Para el desarrollo de Cirupied, se ha seleccionado la metodología Kanban. Esta metodología permite un flujo continuo de trabajo, optimizando la eficiencia y la capacidad de respuesta ante cambios en los requisitos. La flexibilidad de Kanban permite gestionar las tareas de forma dinámica, adaptando el desarrollo a las necesidades emergentes del proyecto.
+### Metodología Utilizada
 
-°Aplicación de la Metodología
+El desarrollo del proyecto sigue la metodología **Kanban**, la cual permite gestionar el flujo continuo de trabajo de manera dinámica. El equipo trabaja en **sprints** de 1 a 2 semanas, entregando funcionalidades clave de manera incremental y realizando revisiones continuas para asegurar el cumplimiento de los objetivos.
 
-El equipo trabaja con sprints de duración variable, entre 1 y 2 semanas. Cada sprint está orientado a entregar funcionalidades clave de forma incremental. El progreso se revisa continuamente, asegurando que cada tarea esté alineada con los objetivos del proyecto.
+### Gestión de Tareas e Issues
+
+Las tareas y los **issues** se gestionan utilizando **Trello**. El flujo de trabajo sigue los siguientes pasos:
+1. **Creación de la tarjeta**: Registro de la tarea en la lista de tareas pendientes.
+2. **Asignación**: Se asigna la tarea a un miembro del equipo.
+3. **Progreso**: Se mueve la tarea entre los estados: "No Iniciado", "En Progreso", "Completado" o "Bloqueado".
+4. **Cierre**: Si la revisión es satisfactoria, la tarea se marca como "Completado".
+
+Las tareas están priorizadas por nivel de importancia:
+- **Alta**: Tareas críticas que requieren atención inmediata.
+- **Media**: Funcionalidades importantes pero no urgentes.
+- **Baja**: Tareas menores o ajustes.
+
+#### Ejemplo de Issue:
+- Descripción: Crear un archivo manifest.json.
+- Asignado a: Maria Lina Maximo Hernandez
+- Fecha de entrega: 12 de octubre
+- Sprint: 2
+- Prioridad: Media
+- Estado: No Iniciado
+
+## Control de Versiones
+
+### Herramienta Seleccionada
+
+El control de versiones se gestiona con **Git** y el repositorio está alojado en **GitHub**.
+
+### Estrategia de Versionamiento
+
+Utilizamos la estrategia **GitFlow** para organizar el desarrollo de forma estructurada:
+- **main**: Contiene el código en producción.
+- **develop**: Donde se integran nuevas funcionalidades antes de pasar a producción.
+- **feature/**: Ramas específicas para el desarrollo de nuevas funcionalidades.
+- **hotfix/**: Ramas dedicadas a corregir errores críticos en producción.
+
+#### Jerarquía de Ramas
+
+1. **main** (producción)
+2. **develop** (integración de nuevas funcionalidades)
+   - **feature/nueva-funcionalidad**
+3. **hotfix/** (correcciones críticas)
+
+Cada miembro del equipo trabaja en su propia rama, creada a partir de `develop`, utilizando el prefijo `feature/`. Las ramas de corrección urgente (`hotfix/`) se crean desde `main`.
+
+### Políticas de Merge
+
+Las ramas `feature/` se integran a `develop` mediante **pull requests**, tras pasar por revisiones de código y pruebas. Solo un usuario autorizado puede hacer merges a la rama `main`, asegurando un control de calidad riguroso.
+
+## Estrategia de Despliegue
+
+### Estrategia Seleccionada
+
+Utilizamos un despliegue gradual con la técnica de **Canary Deployment**, que permite introducir nuevas funcionalidades de manera progresiva, minimizando el impacto en caso de fallos.
+
+### Entornos de Despliegue
+
+- **Desarrollo**: Ramas `feature/` en desarrollo.
+- **Staging**: Rama `develop`, para validación y pruebas de integración.
+- **Producción**: Rama `main`, con código estable.
+
+### Integración Continua (CI/CD)
+
+Se utiliza **GitHub Actions** para automatizar las pruebas y el despliegue en cada commit, asegurando que el código sea probado antes de integrarse en producción.
+
+## Instrucciones para Desarrolladores
+
+### Clonar el Repositorio
+
+```bash
+git clone https://github.com/usuario/cirupied.git
+cd cirupied
+npm install
+npm run start 
 
 
-Gestión de Tareas e Issues
-
-°Herramienta Seleccionada
-
-Se utiliza Trello para la gestión de tareas, donde las actividades están organizadas en listas que contienen las actividades que se realizan en cada etapa de desarrollo.
-
-°Proceso de Gestión de Tareas
-
-El flujo de trabajo en Trello sigue estos pasos:
-
-Creación de la tarjeta: Cada tarea se registra en la lista de tareas pendientes.
-Asignación: Se asigna la tarea a un miembro del equipo.
-Progreso: La tarea se mueve cmbian de qtiqueta segun el estado en la que se encuentren, por ejemplo No Iniciado, En progreso, Completado o Bloqueado.
-Revisión: Tras finalizar la tarea, otro miembro del equipo la revisa.
-Cierre: Si la revisión es satisfactoria, la tarea se marcan como "Completado".
-
-°Priorización de Tareas
-
-Las tareas se clasifican por prioridad con etiquetas en Trello:
-
-Alta: Tareas críticas que requieren atención inmediata.
-Media: Funcionalidades importantes pero no urgentes.
-Baja: Tareas menores o ajustes.
-
-Control de Versiones
-
-1. Herramienta Seleccionada
-   
-El control de versiones se realiza con Git, y la plataforma donde se estara colaborando en el repositorio es GitHub.
-
-3. Estrategia de Versionamiento
-
-Se utiliza la estrategia GitFlow, que permite mantener un control organizado del desarrollo:
-
-main: Rama que contiene el código en producción.
-develop: Rama donde se integran nuevas funcionalidades antes de pasar a producción.
-feature/: Ramas específicas para cada nueva característica.
-hotfix/: Ramas para corregir errores críticos en producción.
-
-3. Creación de Ramas
-
-Cada miembro del equipo trabaja en su propia rama, creada desde la rama develop, utilizando el prefijo feature/ (por ejemplo, feature/nueva-funcionalidad). Las correcciones urgentes se gestionan en ramas hotfix/ creadas desde master.
-
-4. Políticas de Merge
-
-Las ramas feature/ se integran en develop mediante pull requests, tras pasar por revisiones de código y pruebas. Solo un usuario designado tiene la autorización para realizar merges en la rama master, asegurando un control de calidad riguroso.
-
-Estrategia de Despliegue
-
-1. Estrategia Seleccionada
-
-Se utiliza un despliegue gradual mediante la técnica de Canary Deployment. Esto permite introducir nuevas funcionalidades de manera progresiva, reduciendo el impacto en caso de fallos.
-
-2. Entornos de Despliegue
-
-Desarrollo: Ramas feature/ en desarrollo.
-Staging: Rama develop, para validación y pruebas de integración.
-Producción: Rama master, con código estable.
-
-3. Integración Continua
-
-El proyecto utiliza GitHub Actions para automatizar las pruebas y el despliegue en cada commit, asegurando que el código sea probado en cada paso antes de su integración en producción.
